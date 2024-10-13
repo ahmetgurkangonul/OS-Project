@@ -23,7 +23,7 @@ void createGrid(int grid[GRID_SIZE][GRID_SIZE]) {
 void placeShips(int grid[GRID_SIZE][GRID_SIZE]) {
     
     int placed = 0;
-    
+
     while (placed < SHIP_COUNT) {
         int x = rand() % GRID_SIZE;
         int y = rand() % GRID_SIZE;
@@ -35,9 +35,9 @@ void placeShips(int grid[GRID_SIZE][GRID_SIZE]) {
 }
 
 void printGridStatus(int grid[GRID_SIZE][GRID_SIZE]) {
-    
+
     printf("Grid:\n");
-    
+
     for (int i = 0; i < GRID_SIZE; i++) {
         for (int j = 0; j < GRID_SIZE; j++) {
             printf("%d ", grid[i][j]);
@@ -47,13 +47,12 @@ void printGridStatus(int grid[GRID_SIZE][GRID_SIZE]) {
 }
 
 void makeRandomShot(int *x, int *y) {
-    
     *x = rand() % GRID_SIZE;
     *y = rand() % GRID_SIZE;
 }
 
 int allShipsDestroyed(int grid[GRID_SIZE][GRID_SIZE]) {
-    
+
     for (int i = 0; i < GRID_SIZE; i++) {
         for (int j = 0; j < GRID_SIZE; j++) {
             if (grid[i][j] == 1) {
@@ -61,7 +60,7 @@ int allShipsDestroyed(int grid[GRID_SIZE][GRID_SIZE]) {
             }
         }
     }
-    
+
     return 1;
 }
 
