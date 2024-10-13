@@ -8,9 +8,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define GRID_SIZE 4
-#define SHIP_COUNT 4
+#define GRID_SIZE 4 // This represents the grid size. We assume the grid as square.
+#define SHIP_COUNT 4 // This represents the number of ships on the grid(play area).
 
+// This method creates a grid and sets the each elements of grid as 0.
 void createGrid(int grid[GRID_SIZE][GRID_SIZE]) {
     
     for (int i = 0; i < GRID_SIZE; i++) {
@@ -20,6 +21,7 @@ void createGrid(int grid[GRID_SIZE][GRID_SIZE]) {
     }
 }
 
+// This method places the ships randomly. Sets elements of grids which has a ship on that, as 1.
 void placeShips(int grid[GRID_SIZE][GRID_SIZE]) {
     
     int placed = 0;
@@ -34,6 +36,7 @@ void placeShips(int grid[GRID_SIZE][GRID_SIZE]) {
     }
 }
 
+// Prints the status of grids of each player just before the game starts.
 void printGridStatus(int grid[GRID_SIZE][GRID_SIZE]) {
 
     printf("Grid:\n");
@@ -46,11 +49,13 @@ void printGridStatus(int grid[GRID_SIZE][GRID_SIZE]) {
     }
 }
 
+// With this method, players make random shot to the grid of enemy.
 void makeRandomShot(int *x, int *y) {
     *x = rand() % GRID_SIZE;
     *y = rand() % GRID_SIZE;
 }
 
+// This method returns 0 for false or 1 for true after each shot. If it returns 1, a player wins the game and the game ends.
 int allShipsDestroyed(int grid[GRID_SIZE][GRID_SIZE]) {
 
     for (int i = 0; i < GRID_SIZE; i++) {
